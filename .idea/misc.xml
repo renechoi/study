@@ -4,6 +4,12 @@
     <option name="show" value="ASK" />
     <option name="description" value="" />
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/java" />
+    <file type="web" url="file://$PROJECT_DIR$/javaa" />
+    <file type="web" url="file://$PROJECT_DIR$/modern-java-stream-practice/modern-java-practice" />
+  </component>
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>
