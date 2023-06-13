@@ -1,4 +1,4 @@
-package org.thread.runningex1;
+package org.thread;
 
 class MyThread2 implements Runnable {
 	public void run() {

@@ -1,4 +1,4 @@
-package org.thread.runningex1;
+package org.thread;
 
 class MyThread1 extends Thread {
 	public void run() {
