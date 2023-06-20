@@ -19,9 +19,8 @@ public class StreamMap {
 		User user2 = new User().setId(102).setName("Bob").setVerified(false).setEmailAddress("123@123.com");
 		User user3 = new User().setId(103).setName("Chalie").setVerified(false).setEmailAddress("123@123.com");
 
-		List<String> emailList = Stream.of(user1, user2, user3)
-			.map(User::getEmailAddress)
-			.toList();
+			Stream.of(user1, user2, user3)
+			.map(User::getEmailAddress).collect(Collectors.toList());
 
 	}
 }

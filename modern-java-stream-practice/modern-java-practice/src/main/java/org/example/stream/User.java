@@ -1,5 +1,6 @@
 package org.example.stream;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +10,21 @@ public class User {
 	private String emailAddress;
 	private boolean isVerified;
 	private List<Integer> friendUserIds;
+	private LocalDateTime createdAt;
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Optional<String> getEmailAddress() {
+		return Optional.ofNullable(emailAddress);
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -28,9 +44,6 @@ public class User {
 		return this;
 	}
 
-	public String getEmailAddress() {
-		return emailAddress;
-	}
 
 	public User setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;

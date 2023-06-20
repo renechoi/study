@@ -11,7 +11,7 @@ public class StreamPipeline {
 		User user2 = new User().setId(102).setName("Bob").setVerified(false).setEmailAddress("123@123.com");
 		User user3 = new User().setId(103).setName("Chalie").setVerified(false).setEmailAddress("123@123.com");
 
-		List<String> verifiedUsersEmailList = Stream.of(user3, user2, user1)
+		Stream.of(user3, user2, user1)
 			.filter(User::isVerified)
 			.map(User::getEmailAddress)
 			.collect(Collectors.toList());
