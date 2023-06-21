@@ -24,6 +24,31 @@ public class User {
 		return Optional.ofNullable(emailAddress);
 	}
 
+	public static class Builder {
+		private int id;
+		private String name;
+		private String emailAddress;
+		private boolean isVerified;
+		private List<Integer> friendUserIds;
+		private LocalDateTime createdAt;
+
+		private Builder(int id, String name){
+			this.id = id;
+			this.name = name;
+		}
+
+		public Builder withEmailAddress(String emailAddress){
+			this.emailAddress = emailAddress;
+			return this;
+		}
+
+		public Builder withVerified(boolean isVerified){
+			this.isVerified = isVerified;
+			return this;
+		}
+
+	}
+
 
 
 	public int getId() {
