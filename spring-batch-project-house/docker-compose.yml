@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: spring_batch_house
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_USER: "house"
+      MYSQL_PASSWORD: "house"
+      MYSQL_DATABASE: "house_batch"
+    ports:
+      - "3305:3306"
+    command:
+      - "--default-authentication-plugin=mysql_native_password"
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
