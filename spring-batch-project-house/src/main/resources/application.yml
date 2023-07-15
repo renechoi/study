@@ -26,7 +26,7 @@ spring:
 external:
   apartment-api:
     path: http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade
-    service-key: Z8PsmY935x%2BLNyUMHzlts1gfW8Q%2B7JUOceZnuTAT1nYJrxFwpQNyPhBgZ0sQhf6WP5JaKg3tIFQKtFjqTHHn3Q%3D%3D
+    service-key: 2uqVBFdDdT6I2vVuZA1bRLelMVpV8SNyvXgLyRDq52%2BGQK62Jl%2Bv4LJOKMRI5z0NSlJJg59aVEVvd7IPtgegEA%3D%3D
 
 ---
 spring:
