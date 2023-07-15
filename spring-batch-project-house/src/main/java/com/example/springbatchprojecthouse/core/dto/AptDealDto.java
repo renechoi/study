@@ -49,6 +49,10 @@ public class AptDealDto {
     @XmlElement(name = "지번")
     private String jibun;
 
+    /**
+     * api의 버그로 지번이 null일 수 있음을 확인
+     * -> null 처리를 위한 getter를 구현
+     */
     public String getJibun() {
         return Optional.ofNullable(jibun).orElse("");
     }
