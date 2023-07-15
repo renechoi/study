@@ -52,6 +52,12 @@ public class GuLawdTasklet implements Tasklet {
 		return RepeatStatus.FINISHED;
 	}
 
+	/**
+	 * executionContext를 가져올 때
+	 * Map<String, Object> jobExecutionContext = chunkContext.getStepContext().getJobExecutionContext();
+	 * 위와 같이 가져오면 umoodifiableMap으로 가져오기 때문에 put 오퍼레이션이 불가하다.
+	 * 위와 같은 방식은 단순 조회시에는 사용 가능하다.
+	 */
 	private ExecutionContext getExecutionContext(ChunkContext chunkContext) {
 		StepExecution stepExecution = chunkContext.getStepContext().getStepExecution();
 		return stepExecution.getJobExecution().getExecutionContext();
