@@ -35,6 +35,9 @@ public class User {
 	@Enumerated(EnumType.STRING)
 	private Level level = Level.NORMAL;
 
+	/**
+	 * Async 방식으로 사용하도록 Eager 설정으로 함 -> 항상 조회가 되므로 lazy로 할 필요가 없으며 멀티 스레드 환경에서 안정성을 갖도록
+	 */
 	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
 	private List<Orders> orders;
