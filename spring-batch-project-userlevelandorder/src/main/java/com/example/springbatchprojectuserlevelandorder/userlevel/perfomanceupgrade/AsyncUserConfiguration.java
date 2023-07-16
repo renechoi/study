@@ -1,4 +1,4 @@
-package com.example.springbatchprojectuserlevelandorder.userlevel;
+package com.example.springbatchprojectuserlevelandorder.userlevel.perfomanceupgrade;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -43,6 +43,7 @@ import com.example.springbatchprojectuserlevelandorder.order.JobParametersDecide
 import com.example.springbatchprojectuserlevelandorder.order.OrderStatistics;
 import com.example.springbatchprojectuserlevelandorder.userlevel.LevelUpJobExecutionListener;
 import com.example.springbatchprojectuserlevelandorder.userlevel.SaveUserTasklet;
+import com.example.springbatchprojectuserlevelandorder.userlevel.User;
 import com.example.springbatchprojectuserlevelandorder.userlevel.UserRepository;
 
 @Configuration
