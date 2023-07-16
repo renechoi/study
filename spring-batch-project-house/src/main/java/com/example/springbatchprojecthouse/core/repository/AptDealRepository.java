@@ -15,6 +15,9 @@ public interface AptDealRepository extends JpaRepository<AptDeal, Long> {
     Optional<AptDeal> findAptDealByAptAndExclusiveAreaAndDealDateAndDealAmountAndFloor(
             Apt apt, Double exclusiveArea, LocalDate dealDate, Long dealAmount, Integer floor);
 
+    /**
+     * n+1 문제 해결을 위한 패치 조인 쿼리 작성
+     */
     @Query("select ad from AptDeal ad join fetch ad.apt where ad.dealCanceled = 0 and ad.dealDate = ?1")
     List<AptDeal> findByDealCanceledIsFalseAndDealDateEquals(LocalDate dealDate);
 }
