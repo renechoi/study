@@ -33,6 +33,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.springbatchprojectuserlevelandorder.order.JobParametersDecide;
+import com.example.springbatchprojectuserlevelandorder.order.OrderStatistics;
+
 @Configuration
 @RequiredArgsConstructor
 @Slf4j
@@ -53,9 +56,79 @@ public class UserConfiguration {
                 .start(this.saveUserStep())
                 .next(this.userLevelUpStep())
                 .listener(new LevelUpJobExecutionListener(userRepository))
+                .next(new JobParametersDecide("date"))
+                .on(JobParametersDecide.CONTINUE.getName())
+                .to(this.orderStatisticsStep(null, null))
+                .build()
                 .build();
     }
 
+    @Bean(JOB_NAME + "_orderStatisticsStep")
+    @JobScope
+    public Step orderStatisticsStep(@Value("#{jobParameters[date]}") String date,
+                                    @Value("#{jobParameters[path]}") String path) throws Exception {
+        return this.stepBuilderFactory.get(JOB_NAME + "_orderStatisticsStep")
+                .<OrderStatistics, OrderStatistics>chunk(CHUNK)
+                .reader(orderStatisticsItemReader(date))
+                .writer(orderStatisticsItemWriter(date, path))
+                .build();
+    }
+
+    /**
+     * orderStaticsItemReader가 읽어온 데이터를 파일로 생성하기 위한 writer
+     */
+    private ItemWriter<? super OrderStatistics> orderStatisticsItemWriter(String date, String path) throws Exception {
+        YearMonth yearMonth = YearMonth.parse(date);
+        String fileName = yearMonth.getYear() + "년_" + yearMonth.getMonthValue() + "월_일별_주문_금액.csv";
+
+        BeanWrapperFieldExtractor<OrderStatistics> fieldExtractor = new BeanWrapperFieldExtractor<>();
+        fieldExtractor.setNames(new String[] {"amount", "date"});
+
+        DelimitedLineAggregator<OrderStatistics> lineAggregator = new DelimitedLineAggregator<>();
+        lineAggregator.setDelimiter(",");
+        lineAggregator.setFieldExtractor(fieldExtractor);
+
+        FlatFileItemWriter<OrderStatistics> itemWriter = new FlatFileItemWriterBuilder<OrderStatistics>()
+                .resource(new FileSystemResource(path + fileName))
+                .lineAggregator(lineAggregator)
+                .name(JOB_NAME + "_orderStatisticsItemWriter")
+                .encoding("UTF-8")
+                .headerCallback(writer -> writer.write("total_amount,date"))
+                .build();
+        itemWriter.afterPropertiesSet();
+
+        return itemWriter;
+    }
+
+    private ItemReader<? extends OrderStatistics> orderStatisticsItemReader(String date) throws Exception {
+        YearMonth yearMonth = YearMonth.parse(date);
+
+        // 12월로 들어오면 start와 end를 12월 1일과 12월 31일로 설정
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("startDate", yearMonth.atDay(1));
+        parameters.put("endDate", yearMonth.atEndOfMonth());
+
+        Map<String, Order> sortKey = new HashMap<>();
+        sortKey.put("created_date", Order.ASCENDING);
+
+        JdbcPagingItemReader<OrderStatistics> itemReader = new JdbcPagingItemReaderBuilder<OrderStatistics>()
+                .dataSource(this.dataSource)
+                .rowMapper((resultSet, i) -> OrderStatistics.builder()
+                        .amount(resultSet.getString(1))
+                        .date(LocalDate.parse(resultSet.getString(2), DateTimeFormatter.ISO_DATE))
+                        .build())
+                .pageSize(CHUNK)
+                .name(JOB_NAME + "_orderStatisticsItemReader")
+                .selectClause("sum(amount), created_date")
+                .fromClause("orders")
+                .whereClause("created_date >= :startDate and created_date <= :endDate")
+                .groupClause("created_date")
+                .parameterValues(parameters)
+                .sortKeys(sortKey)
+                .build();
+        itemReader.afterPropertiesSet();
+        return itemReader;
+    }
 
     @Bean(JOB_NAME + "_saveUserStep")
     public Step saveUserStep() {
