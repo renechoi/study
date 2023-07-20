@@ -6,17 +6,19 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class TestTemplateServiceImpl implements TestTemplateService {
-	private Map<Integer, TestTemplate> templates = new LinkedHashMap<>();
+	private final TestTemplateRepository testTemplateRepository;
 
 	@Override
 	public List<TestTemplate> registerTemplates(List<TestTemplate> testTemplates) {
-		testTemplates.forEach(template -> templates.put(template.getSequence(), template));
-		return testTemplates;
+		return testTemplateRepository.saveAll(testTemplates);
 	}
 
 	public TestTemplate getTemplate(Integer sequence) {
-		return templates.get(sequence);
+		return testTemplateRepository.get(sequence);
 	}
 }
