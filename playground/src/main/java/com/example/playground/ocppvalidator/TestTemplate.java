@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class TestTemplate {
 
-	private Integer sequence;
+	private String sequence;
 
 	private List<TestAction> actions;
 

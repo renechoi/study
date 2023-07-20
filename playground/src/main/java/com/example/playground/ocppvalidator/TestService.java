@@ -2,8 +2,8 @@ package com.example.playground.ocppvalidator;
 
 import java.util.List;
 
-public interface TestTemplateService {
-	List<TestTemplate> registerTemplates(List<TestTemplate> testTemplates);
+public interface TestService {
+	TestScenario registerTemplates(List<TestTemplate> testTemplates);
 
 	List<TestTemplate> getAllTemplates();
 

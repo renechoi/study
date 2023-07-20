@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
+
 @Repository
 public class TestTemplateRepository {
-    private Map<Integer, TestTemplate> templates = new LinkedHashMap<>();
+    private Map<String, TestTemplate> templates = new LinkedHashMap<>();
 
     public List<TestTemplate> saveAll(List<TestTemplate> testTemplates) {
         testTemplates.forEach(template -> templates.put(template.getSequence(), template));

@@ -10,11 +10,11 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-public class TestTemplateController {
-	private final TestTemplateFacade testTemplateFacade;
+public class TestController {
+	private final TestFacade testFacade;
 
 	@PostMapping("/testTemplate")
-	public List<TestScenario> registerTemplates(@RequestBody List<TestTemplate> testTemplates) {
-		return testTemplateFacade.registerTemplates(testTemplates);
+	public TestScenario registerTemplates(@RequestBody List<TestTemplate> testTemplates) {
+		return testFacade.registerTemplates(testTemplates);
 	}
 }
