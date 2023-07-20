@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequiredArgsConstructor
 public class TestTemplateController {
-	private final TestTemplateService testTemplateService;
+	private final TestTemplateFacade testTemplateFacade;
 
 	@PostMapping("/testTemplate")
-	public List<TestTemplate> registerTemplates(@RequestBody List<TestTemplate> testTemplates){
-		return testTemplateService.registerTemplates(testTemplates);
+	public List<TestScenario> registerTemplates(@RequestBody List<TestTemplate> testTemplates) {
+		return testTemplateFacade.registerTemplates(testTemplates);
 	}
 }

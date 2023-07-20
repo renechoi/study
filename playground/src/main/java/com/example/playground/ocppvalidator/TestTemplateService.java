@@ -4,4 +4,7 @@ import java.util.List;
 
 public interface TestTemplateService {
 	List<TestTemplate> registerTemplates(List<TestTemplate> testTemplates);
+
+	List<TestTemplate> getAllTemplates();
+
 }
