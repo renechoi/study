@@ -1,0 +1,33 @@
+
+POST http://localhost:8080/testTemplate
+Content-Type: application/json
+
+
+[
+  {
+    "sequence": 1,
+    "actions": [
+      {"type": "REQUEST", "message": "bootNotification"},
+      {"type": "RESPONSE", "message": "statusNotificaation"},
+      {"type": "RESPONSE", "message": "statusNotification"}
+    ]
+  },
+  {
+    "sequence": 2,
+    "actions": [
+      {"type": "REQUEST", "message": "authroize"},
+      {"type": "RESPONSE", "message": "checkNotification"},
+      {"type": "RESPONSE", "message": "statusNotification"},
+      {"type": "RESPONSE", "message": "statusNotification"}
+    ]
+  },
+  {
+    "sequence": 3,
+    "actions": [
+      {"type": "REQUEST", "message": "heartbeat"},
+      {"type": "REQUEST", "message": "heartbeat"},
+      {"type": "REQUEST", "message": "heartbeat"}
+    ]
+  }
+]
+
