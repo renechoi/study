@@ -1,18 +1,16 @@
 package com.rene.core.domain;
+import com.rene.core.domain.entity.Schedule;
+import com.rene.core.domain.entity.User;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
-
-@Getter
-@NoArgsConstructor
 public class Notification {
 
-    private Long id;
-    private LocalDateTime notifyAt;
-    private String title;
-    private String description;
-    private User writer;
-    private LocalDateTime createdAt;
+    private Schedule schedule;
+
+    public Notification(Schedule schedule) {
+        this.schedule = schedule;
+    }
+
+    public User getWriter() {
+        return this.schedule.getWriter();
+    }
 }
