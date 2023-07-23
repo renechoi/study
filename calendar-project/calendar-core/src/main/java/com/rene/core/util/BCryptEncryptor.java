@@ -1,7 +1,9 @@
 package com.rene.core.util;
 
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BCryptEncryptor implements Encryptor {
     @Override
     public String encrypt(String origin) {
