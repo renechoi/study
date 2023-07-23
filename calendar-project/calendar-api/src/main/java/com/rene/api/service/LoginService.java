@@ -4,6 +4,7 @@ import com.rene.api.dto.LoginReq;
 import com.rene.api.dto.SignUpReq;
 import com.rene.core.domain.entity.User;
 import com.rene.core.dto.UserCreateReq;
+import com.rene.core.exception.ErrorCode;
 import com.rene.core.service.UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -45,7 +46,7 @@ public class LoginService {
         if (user.isPresent()) {
             session.setAttribute(LOGIN_SESSION_KEY, user.get().getId());
         } else {
-            throw new RuntimeException("password or email not match");
+            throw new RuntimeException(ErrorCode.PASSWORD_NOT_MATCH.getMessage());
         }
     }
 
