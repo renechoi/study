@@ -3,12 +3,14 @@ package com.rene.core.domain.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import com.rene.core.domain.Event;
 import com.rene.core.domain.Notification;
 import com.rene.core.domain.ScheduleType;
 import com.rene.core.domain.Task;
+import com.rene.core.util.Period;
 
 @Builder(access = AccessLevel.PRIVATE)
 @Getter
@@ -73,5 +75,13 @@ public class Schedule extends BaseEntity {
 
     public Notification toNotification() {
         return new Notification(this);
+    }
+
+    public boolean isOverlapped(LocalDate date) {
+        return Period.of(this.getStartAt(), this.getEndAt()).isOverlapped(date);
+    }
+
+    public boolean isOverlapped(Period period) {
+        return Period.of(this.getStartAt(), this.getEndAt()).isOverlapped(period);
     }
 }

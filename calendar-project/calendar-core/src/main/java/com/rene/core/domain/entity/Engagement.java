@@ -3,10 +3,12 @@ package com.rene.core.domain.entity;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 import com.rene.core.domain.Event;
 import com.rene.core.domain.RequestStatus;
 import com.rene.core.domain.ScheduleType;
+import com.rene.core.util.Period;
 
 @NoArgsConstructor
 @Entity
@@ -35,6 +37,10 @@ public class Engagement extends BaseEntity {
         return schedule.toEvent();
     }
 
+    public Schedule getSchedule() {
+        return schedule;
+    }
+
     public User getAttendee() {
         return attendee;
     }
@@ -42,4 +48,13 @@ public class Engagement extends BaseEntity {
     public RequestStatus getStatus() {
         return status;
     }
+
+    public boolean isOverlapped(LocalDate date) {
+        return this.schedule.isOverlapped(date);
+    }
+
+    public boolean isOverlapped(Period period) {
+        return this.schedule.isOverlapped(period);
+    }
+
 }
