@@ -1,1 +1,13 @@
 GET localhost:8080/
+
+###
+
+POST localhost:8080/api/sign-up
+Content-Type: application/json
+
+{
+  "name": "Sample User",
+  "email": "sampleuser@example.com",
+  "password": "samplepassword",
+  "birthday": "1990-01-01"
+}
