@@ -6,13 +6,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 import com.rene.api.dto.AuthUser;
 import com.rene.api.dto.CreateEventReq;
+import com.rene.api.dto.EngagementEmailStuff;
 import com.rene.core.domain.RequestStatus;
 import com.rene.core.domain.entity.Engagement;
 import com.rene.core.domain.entity.Schedule;
+import com.rene.core.domain.entity.User;
 import com.rene.core.domain.entity.repository.EngagementRepository;
 import com.rene.core.domain.entity.repository.ScheduleRepository;
+import com.rene.core.exception.CalendarException;
+import com.rene.core.exception.ErrorCode;
 import com.rene.core.service.UserService;
 
 @Service
@@ -33,16 +39,25 @@ public class EventService {
                 .stream()
                 .anyMatch(e -> e.getEvent().isOverlapped(req.getStartAt(), req.getEndAt())
                         && e.getStatus() == RequestStatus.ACCEPTED)) {
-            throw new RuntimeException("cannot make engagement. period overlapped.");
+            throw new CalendarException(ErrorCode.EVENT_CREATE_OVERLAPPED_PERIOD);
         }
         final Schedule eventSchedule = Schedule.event(req.getTitle(), req.getDescription(), req.getStartAt(), req.getEndAt(), userService.getOrThrowById(authUser.getId()));
+
         scheduleRepository.save(eventSchedule);
-        req.getAttendeeIds().stream()
-                .map(userService::getOrThrowById)
-                .forEach(user -> {
-                    final Engagement e = engagementRepository.save(new Engagement(eventSchedule, user));
-                    emailService.sendEngagement(e);
-                });
+
+        final List<User> attendeeList = req.getAttendeeIds().stream().map(userService::getOrThrowById).collect(toList());
+
+        attendeeList.forEach(user -> {
+            final Engagement e = engagementRepository.save(new Engagement(eventSchedule, user));
+            emailService.sendEngagement(
+                    new EngagementEmailStuff(
+                            e.getId(),
+                            e.getAttendee().getEmail(),
+                            attendeeList.stream().map(User::getEmail).collect(toList()),
+                            e.getEvent().getTitle(),
+                            e.getEvent().getPeriod()
+                    ));
+        });
     }
 
 }

@@ -1,14 +1,16 @@
 package com.rene.core.domain.entity;
 
+import com.rene.core.domain.Event;
+import com.rene.core.domain.RequestReplyType;
+import com.rene.core.domain.RequestStatus;
+import com.rene.core.domain.ScheduleType;
+import com.rene.core.util.Period;
+
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-import com.rene.core.domain.Event;
-import com.rene.core.domain.RequestStatus;
-import com.rene.core.domain.ScheduleType;
-import com.rene.core.util.Period;
 
 @NoArgsConstructor
 @Entity
@@ -56,5 +58,22 @@ public class Engagement extends BaseEntity {
     public boolean isOverlapped(Period period) {
         return this.schedule.isOverlapped(period);
     }
+
+    public boolean isRequested() {
+        return this.status == RequestStatus.REQUESTED;
+    }
+
+    public Engagement reply(RequestReplyType type) {
+        switch (type) {
+            case ACCEPT:
+                this.status = RequestStatus.ACCEPTED;
+                break;
+            case REJECT:
+                this.status = RequestStatus.REJECTED;
+                break;
+        }
+        return this;
+    }
+
 
 }

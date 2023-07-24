@@ -15,10 +15,13 @@ import com.rene.api.dto.CreateEventReq;
 import com.rene.api.dto.CreateNotificationReq;
 import com.rene.api.dto.CreateTaskReq;
 import com.rene.api.dto.ForListScheduleDto;
+import com.rene.api.dto.ReplyEngagementReq;
+import com.rene.api.service.EngagementService;
 import com.rene.api.service.EventService;
 import com.rene.api.service.NotificationService;
 import com.rene.api.service.ScheduleQueryService;
 import com.rene.api.service.TaskService;
+import com.rene.core.domain.RequestStatus;
 
 @RequiredArgsConstructor
 @RequestMapping("/api/schedules")
@@ -29,6 +32,7 @@ public class ScheduleController {
     private final TaskService taskService;
     private final EventService eventService;
     private final NotificationService notificationService;
+    private final EngagementService engagementService;
 
     @PostMapping("/tasks")
     public ResponseEntity<Void> createTask(@Valid @RequestBody CreateTaskReq createTaskReq,
@@ -73,5 +77,13 @@ public class ScheduleController {
             @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM") String yearMonth
     ) {
         return scheduleQueryService.getSchedulesByMonth(yearMonth == null ? YearMonth.now() : YearMonth.parse(yearMonth), authUser);
+    }
+
+    @PutMapping("/events/engagements/{engagementId}")
+    public RequestStatus updateEngagement(
+            @Valid @RequestBody ReplyEngagementReq replyEngagementReq,
+            @PathVariable Long engagementId,
+            AuthUser authUser) {
+        return engagementService.update(authUser, engagementId, replyEngagementReq.getType());
     }
 }
