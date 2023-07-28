@@ -6,10 +6,19 @@
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/calendar-project" />
+    <file type="web" url="file://$PROJECT_DIR$/concurrency-study-1" />
+    <file type="web" url="file://$PROJECT_DIR$/concurrency-study-2" />
     <file type="web" url="file://$PROJECT_DIR$/java" />
     <file type="web" url="file://$PROJECT_DIR$/javaa" />
     <file type="web" url="file://$PROJECT_DIR$/modern-java-stream-practice/modern-java-practice" />
+    <file type="web" url="file://$PROJECT_DIR$/playground" />
+    <file type="web" url="file://$PROJECT_DIR$/rest-docs-practice" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-batch-practice" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-batch-project-house" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-batch-project-userlevelandorder" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="corretto-11" project-jdk-type="JavaSDK" />
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>

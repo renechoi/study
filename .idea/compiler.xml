@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
+        </processorPath>
+        <module name="calendar-project.calendar-batch.main" />
+        <module name="calendar-project.calendar-api.main" />
+        <module name="calendar-project.calendar-core.main" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="calendar-api" target="17" />
+      <module name="calendar-api.main" target="17" />
+      <module name="calendar-api.test" target="17" />
+      <module name="calendar-batch" target="17" />
+      <module name="calendar-batch.main" target="17" />
+      <module name="calendar-batch.test" target="17" />
+      <module name="calendar-core" target="17" />
+      <module name="calendar-core.main" target="17" />
+      <module name="calendar-core.test" target="17" />
+      <module name="calendar-project.main" target="17" />
+      <module name="calendar-project.test" target="17" />
       <module name="javaa" target="17" />
       <module name="javaa.main" target="17" />
       <module name="javaa.test" target="17" />

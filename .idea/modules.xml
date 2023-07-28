@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/calendar-api/calendar-project.calendar-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/calendar-api/calendar-project.calendar-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/calendar-core/calendar-project.calendar-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/calendar-core/calendar-project.calendar-core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/concurrency-study-1.main.iml" filepath="$PROJECT_DIR$/.idea/modules/concurrency-study-1.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/concurrency-study-2.main.iml" filepath="$PROJECT_DIR$/.idea/modules/concurrency-study-2.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/playground.main.iml" filepath="$PROJECT_DIR$/.idea/modules/playground.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-docs-practice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-docs-practice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-batch-practice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-batch-practice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-batch-project-house.main.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-batch-project-house.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spring-batch-project-house.test.iml" filepath="$PROJECT_DIR$/.idea/modules/spring-batch-project-house.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/study.iml" filepath="$PROJECT_DIR$/.idea/study.iml" />
     </modules>
   </component>
