@@ -1,8 +1,9 @@
 package com.rene.api.service;
 
+import com.rene.api.controller.api.BatchController;
 import com.rene.api.dto.EngagementEmailStuff;
-import com.rene.core.domain.entity.Engagement;
 
 public interface EmailService {
-    void sendEngagement(EngagementEmailStuff e);
+    void sendEngagement(EngagementEmailStuff stuff);
+    void sendAlarmMail(BatchController.SendMailBatchReq sendMailBatchReq);
 }

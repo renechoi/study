@@ -9,9 +9,6 @@ import java.util.function.Predicate;
 
 import com.rene.core.util.Period;
 
-import lombok.Getter;
-
-@Getter
 public class EngagementEmailStuff {
     private static final String engagementUpdateApi = "http://localhost:8080/events/engagements/";
     public static final String MAIL_TIME_FORMAT = "yyyy년 MM월 dd일(E) a hh시 mm분";
