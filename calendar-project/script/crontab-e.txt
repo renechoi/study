@@ -1,0 +1,2 @@
+* * * * * /Users/script/cron_test.sh >> /Users/log/cron_test.sh.log 2>&1
+* * * * * /Users/script/batch_cron.sh >> /Users/log/batch_cron.sh.log 2>&1
