@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: pass-batch
+  datasource:
+    url: jdbc:mysql:localhost:3307/pass_local?zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    username: pass_local
+    password: passlocal1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+
+  batch:
+    job:
+      enabled: false # 기본값 true는 Spring Boot 실행 시 등록되어 있는 Job들이 실행됩니다.
+    jdbc:
+      initialize-schema: always
+
