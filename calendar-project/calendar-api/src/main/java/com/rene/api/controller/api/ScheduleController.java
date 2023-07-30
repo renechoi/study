@@ -13,13 +13,16 @@ import java.util.List;
 import com.rene.api.dto.AuthUser;
 import com.rene.api.dto.CreateEventReq;
 import com.rene.api.dto.CreateNotificationReq;
+import com.rene.api.dto.CreateShareReq;
 import com.rene.api.dto.CreateTaskReq;
 import com.rene.api.dto.ForListScheduleDto;
 import com.rene.api.dto.ReplyEngagementReq;
+import com.rene.api.dto.ReplyReq;
 import com.rene.api.service.EngagementService;
 import com.rene.api.service.EventService;
 import com.rene.api.service.NotificationService;
 import com.rene.api.service.ScheduleQueryService;
+import com.rene.api.service.ShareService;
 import com.rene.api.service.TaskService;
 import com.rene.core.domain.RequestStatus;
 
@@ -33,6 +36,7 @@ public class ScheduleController {
     private final EventService eventService;
     private final NotificationService notificationService;
     private final EngagementService engagementService;
+    private final ShareService shareService;
 
     @PostMapping("/tasks")
     public ResponseEntity<Void> createTask(@Valid @RequestBody CreateTaskReq createTaskReq,
@@ -85,5 +89,24 @@ public class ScheduleController {
             @PathVariable Long engagementId,
             AuthUser authUser) {
         return engagementService.update(authUser, engagementId, replyEngagementReq.getType());
+    }
+
+    @PostMapping("/shares")
+    public void shareSchedule(
+        AuthUser authUser,
+        @Valid @RequestBody CreateShareReq req
+    ) {
+        shareService.createShare(authUser.getId(),
+            req.getToUserId(),
+            req.getDirection());
+    }
+
+    @PutMapping("/shares/{shareId}")
+    public void replyToShareRequest(
+        @PathVariable Long shareId,
+        @Valid @RequestBody ReplyReq replyReq,
+        AuthUser authUser
+    ) {
+        shareService.replyToShareRequest(shareId, authUser.getId(), replyReq.getType());
     }
 }
