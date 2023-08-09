@@ -1,0 +1,86 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    transition: 1s;
+}
+
+.box:hover{
+    width: 300px;
+    background-color: royalblue;
+}
+
+.box:active{
+    width: 400px;
+    background-color: aqua;
+}
+input:focus {
+    background-color: royalblue;
+}
+
+
+.fruits span:first-child{
+    color: red;
+}
+
+.fruits h3:last-child{
+    color: brown;
+}
+
+.fruits *:nth-child(2){
+    color: blueviolet;
+}
+
+.fruits *:nth-child(3n){
+    color: royalblue;
+}
+
+.fruits *:not(span){
+    color: orange;
+}
+
+.box2::before{
+    content: "앞!";
+}
+
+.box2:after{
+    content:"";
+    display:block;
+    width: 30px;
+    height: 20px;
+    background-color: royalblue;
+}
+
+[disabled]{
+    color: red;
+}
+
+
+[type="password"]{
+    background-color: cadetblue;
+}
+
+
+.animal {
+    color: cadetblue;
+    font-style: italic;
+}
+
+
+
+
+.parent{
+    width: 300px;
+    height: 100px;
+    background-color: orange;
+}
+
+.child {
+    width:100px;
+    height: inherit;
+    background-color: blue;
+    top:100px;
+}
+
+
+
