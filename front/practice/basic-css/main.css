@@ -198,3 +198,103 @@ p{
     box-sizing: border-box;
     line-height: 1.4;
 }
+
+
+a{
+    display: block;
+    color: royalblue;
+    text-decoration: underline;
+    text-indent: 50px;
+}
+
+.background{
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    background-image: url("https://heropy.blog/css/images/logo.png");
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.container4{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    background-color: orange;
+}
+
+.container4 .item4:nth-child(1){
+    width: 100px;
+    height: 100px;
+}
+
+.container4 .item4{
+    border: 4px dotted;
+}
+
+.container4 .item4:nth-child(2){
+    width: 120px;
+    height: 70px;
+    position: absolute;
+    top: 30px;
+    left: 60px;
+}
+
+
+.container4 .item4:nth-child(3){
+    width: 70px;
+    height: 120px;
+    background-color: blue;
+
+}
+
+
+
+
+.container5{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.container5 .item5{
+    width: 70px;
+    height: 50px;
+    background-color: blueviolet;
+}
+
+.container5 .item5:nth-child(3){
+    flex-grow: 2;
+}
+
+.container5 .item5:nth-child(5){
+    order: -2;
+}
+
+
+.container5 .item5:nth-child(2):active{
+    background-color: orange;
+}
+
+
+
+
+.container6 {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+}
+
+.container6 .item6{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    transform: perspective(100px) rotateX(45deg) translateX(100px);
+}
