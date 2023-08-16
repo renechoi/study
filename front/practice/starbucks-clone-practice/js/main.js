@@ -5,12 +5,12 @@ searchEl.addEventListener('click', () => {
     searchInputEl.focus();
 });
 
-searchInputEl.addEventListener('focus', function (){
+searchInputEl.addEventListener('focus', function () {
     searchEl.classList.add('focused');
     searchInputEl.setAttribute('placeholder', '통합검색');
 });
 
-searchInputEl.addEventListener('blur', function (){
+searchInputEl.addEventListener('blur', function () {
     searchEl.classList.remove('focused');
     searchInputEl.setAttribute('placeholder', '');
 });
@@ -18,14 +18,14 @@ searchInputEl.addEventListener('blur', function (){
 
 const badgeEl = document.querySelector('header .badges');
 window.addEventListener('scroll', _.throttle(function () {
-    if (window.scrollY > 500){
+    if (window.scrollY > 500) {
         gsap.to(badgeEl, .6, {
-            opacity:0,
+            opacity: 0,
             display: 'none'
         })
-    } else{
+    } else {
         gsap.to(badgeEl, .6, {
-            opacity:1,
+            opacity: 1,
             display: 'block'
         })
     }
@@ -33,14 +33,13 @@ window.addEventListener('scroll', _.throttle(function () {
 
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
-fadeEls.forEach(function (fadeEl, index){
+fadeEls.forEach(function (fadeEl, index) {
 
     gsap.to(fadeEl, 1, {
         delay: (index) * .7,
         opacity: 1
     })
 })
-
 
 
 /**
@@ -81,3 +80,19 @@ new Swiper('.awards .swiper-container', {
         nextEl: '.awards .swiper-next' // 다음 버튼 선택자
     }
 })
+
+
+const promotionEl = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false;
+
+promotionToggleBtn.addEventListener('click', function () {
+    isHidePromotion = !isHidePromotion;
+    if (isHidePromotion) {
+        promotionEl.classList.add('hide');
+    } else {
+
+        promotionEl.classList.remove('hide');
+    }
+});
+
