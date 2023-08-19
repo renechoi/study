@@ -11,6 +11,17 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import com.binance.connector.client.impl.spot.Market;
+import org.json.JSONArray;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,41 +30,45 @@ public class Main {
         boolean showLimitUsage = false;
 
         Market market = new Market(baseUrl, apiKey, showLimitUsage, null);
-
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("symbol", "BTCUSDT");
         parameters.put("interval", "1m");
-        parameters.put("startTime", System.currentTimeMillis() - (12 * 60 * 60 * 1000L));
-        parameters.put("limit", 720);
 
-        String klineData = market.klines(parameters);
-        JSONArray klines = new JSONArray(klineData);
+        int hoursToFetch = 24; // 가져올 시간 범위 (시간)
+        int limit = 1000; // 한 번에 가져올 데이터의 최대 개수
+        int intervalsPerHour = 60; // 1시간당 데이터 간격 수 (1분 간격)
 
-        System.out.println("Kline Data for BTCUSDT (1-minute chart, last 12 hours): ");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
         LinkedList<BigDecimal> closePrices = new LinkedList<>();
 
         // CSV 파일에 쓰기
         try (FileWriter writer = new FileWriter("rsi_1m.csv")) {
             writer.append("Date,Close,RSI\n");
 
-            for (int i = 0; i < klines.length(); i++) {
-                JSONArray kline = klines.getJSONArray(i);
-                long openTime = kline.getLong(0);
-                Date date = new Date(openTime);
-                String formattedDate = sdf.format(date);
+            for (int offset = 0; offset < hoursToFetch * intervalsPerHour; offset += limit) {
+                parameters.put("startTime", System.currentTimeMillis() - ((hoursToFetch * 60 * 60 * 1000L) - (offset * 60 * 1000L)));
+                parameters.put("limit", limit);
 
-                BigDecimal closePrice = new BigDecimal(kline.getString(4));
-                closePrice = closePrice.setScale(2, BigDecimal.ROUND_HALF_UP);
+                String klineData = market.klines(parameters);
+                JSONArray klines = new JSONArray(klineData);
 
-                closePrices.add(closePrice);
-                if (closePrices.size() > 14) closePrices.removeFirst();
+                for (int i = 0; i < klines.length(); i++) {
+                    JSONArray kline = klines.getJSONArray(i);
+                    long openTime = kline.getLong(0);
+                    Date date = new Date(openTime);
+                    String formattedDate = sdf.format(date);
 
-                if (i >= 13) {
-                    double rsi = calculateRSI(closePrices);
-                    writer.append(formattedDate).append(',').append(closePrice.toString()).append(',').append(String.valueOf(rsi)).append('\n');
-                    System.out.println(formattedDate + " | Close: " + closePrice + " | RSI: " + rsi);
+                    BigDecimal closePrice = new BigDecimal(kline.getString(4));
+                    closePrice = closePrice.setScale(2, BigDecimal.ROUND_HALF_UP);
+
+                    closePrices.add(closePrice);
+                    if (closePrices.size() > 14) closePrices.removeFirst();
+
+                    if (i >= 13) {
+                        double rsi = calculateRSI(closePrices);
+                        writer.append(formattedDate).append(',').append(closePrice.toString()).append(',').append(String.valueOf(rsi)).append('\n');
+                        System.out.println(formattedDate + " | Close: " + closePrice + " | RSI: " + rsi);
+                    }
                 }
             }
         } catch (IOException e) {
