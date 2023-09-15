@@ -946,3 +946,305 @@ main {
     }
 }
 
+
+
+
+
+
+
+/* Display */
+.display {
+    margin-top: 450px;
+}
+/* Display / Notes */
+.display .notes h1 {
+    width: 630px;
+    height: 370px;
+    background-image: url("../images/display_headline.png");
+    transform: translate(104px, 0);
+}
+.display .notes .figures {
+    height: 814px;
+    margin-top: 26px;
+}
+.display .notes figcaption {
+    width: 145px;
+    height: 45px;
+    background-image: url("../images/display_notes_caption.png");
+    transform: translate(707px, -16px);
+}
+/* Display / Shareplay */
+.display .shareplay {
+    margin-top: 55px;
+}
+.display .shareplay .figures {
+    height: 630px;
+}
+.display .shareplay figure {
+    transform: translate(-360px, 0);
+}
+.display .shareplay figcaption {
+    width: 110px;
+    height: 48px;
+    background-image: url("../images/display_shareplay_caption.png");
+    transform: translate(300px, 658px);
+}
+
+@media (max-width: 1000px) {
+    .display {
+        margin-top: 180px;
+    }
+    .display .notes h1 {
+        width: 400px;
+        height: 240px;
+        transform: translate(120px, 0);
+    }
+    .display .notes .figures {
+        height: 530px;
+    }
+    .display .notes figure {
+        transform: translate(80px, -10px);
+    }
+    .display .notes figure img {
+        width: 676px;
+    }
+    .display .notes figcaption {
+        transform: scale(.8) translate(540px, -34px);
+    }
+    .display .shareplay .figures {
+        height: 330px;
+    }
+    .display .shareplay figure {
+        transform: translate(-178px, 0);
+    }
+    .display .shareplay figure img {
+        width: 682px;
+    }
+    .display .shareplay figcaption {
+        transform: scale(.8) translate(261px, 540px);
+    }
+}
+
+@media (max-width: 740px) {
+    .display .notes h1 {
+        width: 290px;
+        height: 308px;
+        background-image: url("../images/display_headline_mobile.png");
+        margin: 0 auto;
+        transform: none;
+    }
+    .display .notes .figures {
+        height: auto;
+        margin-top: 60px;
+    }
+    .display .notes figure {
+        transform: translate(20px, 0);
+    }
+    .display .notes figure img {
+        width: 458px;
+    }
+    .display .notes figcaption {
+        transform: scale(.8) translate(220px, -45px);
+    }
+    .display .shareplay {
+        margin-top: 30px;
+    }
+    .display .shareplay .figures {
+        height: auto;
+        order: 1;
+    }
+    .display .shareplay figure {
+        transform: translate(20px, 0);
+    }
+    .display .shareplay figure img {
+        width: 460px;
+    }
+    .display .shareplay figcaption {
+        transform: scale(.8) translate(261px, 358px);
+    }
+}
+
+
+
+
+
+
+
+
+/* Camera */
+.camera {
+    margin-top: 303px;
+}
+/* Camera / Stage */
+.camera .stage {
+    position: relative;
+}
+.camera .stage h1 {
+    width: 650px;
+    height: 450px;
+    background-image: url("../images/camera_headline.png");
+    transform: translate(-25px, 0);
+}
+.camera .stage .info {
+    position: absolute;
+    top: 150px;
+    right: 0;
+}
+.camera .stage .figures {
+    height: 770px;
+    margin-top: 24px;
+}
+.camera .stage figure {
+    transform: translate(90px, 0);
+}
+.camera .stage video {
+    position: absolute;
+    top: 36px;
+    left: 76px;
+    -webkit-mask-image: url("../images/camera_video_mask.png");
+    mask-image: url("../images/camera_video_mask.png");
+}
+.camera .stage .controller--play,
+.camera .stage .controller--pause {
+    color: var(--color-link);
+    cursor: pointer;
+    transform: translate(428px, -134px) rotate(-3deg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.camera .stage .controller--play:hover,
+.camera .stage .controller--pause:hover {
+    text-decoration: underline;
+}
+.camera .stage .controller--play.hide,
+.camera .stage .controller--pause.hide {
+    display: none;
+}
+.camera .stage .controller--play img,
+.camera .stage .controller--pause img {
+    width: 20px;
+    margin-top: -2px;
+}
+.camera .stage figcaption {
+    width: 130px;
+    height: 110px;
+    background-image: url("../images/camera_hardware_caption.png");
+    transform: translate(-116px, 383px);
+}
+/* Camera / Edit */
+.camera .edit .figures {
+    height: 910px;
+}
+.camera .edit figure {
+    transform: translate(20px, 0);
+}
+.camera .edit figcaption {
+    width: 130px;
+    height: 47px;
+    background-image: url("../images/camera_edit_caption.png");
+    transform: translate(27px, 905px);
+}
+
+@media (max-width: 1000px) {
+    .camera {
+        margin-top: 165px;
+    }
+    .camera .stage h1 {
+        width: 405px;
+        height: 270px;
+        transform: translate(0, 0);
+    }
+    .camera .stage .info {
+        top: 0;
+    }
+    .camera .stage .figures {
+        height: 500px;
+    }
+    .camera .stage figure img {
+        width: 678px;
+    }
+    .camera .stage video {
+        top: 23px;
+        left: 50px;
+        transform: scale(.65);
+        transform-origin: 0 0;
+    }
+    .camera .stage .controller--play,
+    .camera .stage .controller--pause {
+        transform: translate(276px, -88px) rotate(-3deg);
+    }
+    .camera .stage figcaption {
+        transform: scale(.8) translate(-136px, 306px);
+    }
+    .camera .edit .figures {
+        height: auto;
+    }
+    .camera .edit figure {
+        transform: translate(40px, 0);
+    }
+    .camera .edit figure img {
+        width: 509px;
+    }
+    .camera .edit figcaption {
+        transform: scale(.8) translate(27px, 742px);
+    }
+}
+
+@media (max-width: 740px) {
+    .camera {
+        margin-top: 120px;
+    }
+    .camera .stage h1 {
+        width: 304px;
+        height: 350px;
+        background-image: url("../images/camera_headline_mobile.png");
+        margin: 0 auto;
+    }
+    .camera .stage .info {
+        position: static;
+        margin-top: 30px;
+    }
+    .camera .stage .figures {
+        height: auto;
+        margin-top: 64px;
+    }
+    .camera .stage figure {
+        transform: translate(20px, 0);
+    }
+    .camera .stage figure img {
+        width: 450px;
+    }
+    .camera .stage video {
+        top: 15px;
+        left: 33px;
+        transform: scale(.43);
+    }
+    .camera .stage .controller--play,
+    .camera .stage .controller--pause {
+        transform: translate(169px, -51px) rotate(-3deg);
+    }
+    .camera .stage figcaption {
+        width: 175px;
+        height: 43px;
+        background-image: url("../images/camera_hardware_caption_mobile.png");
+        transform: scale(1) translate(110px, -40px);
+    }
+    .camera .edit .figures {
+        margin-top: 30px;
+    }
+    .camera .edit figure img {
+        width: 343px;
+    }
+    .camera .edit figcaption {
+        transform: scale(.8) translate(27px, 502px);
+    }
+}
+
+
+
+
+
+
+
+
