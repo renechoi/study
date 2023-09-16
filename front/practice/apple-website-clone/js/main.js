@@ -158,3 +158,47 @@ ipads.forEach(ipad => {
 
     itemsEl.append(itemEl)
 })
+
+
+
+
+// 푸터 내비게이션 맵 랜더링!
+const navigationsEl = document.querySelector('footer .navigations')
+navigations.forEach(nav => {
+    const mapEl = document.createElement('div')
+    mapEl.classList.add('map')
+
+    let mapList = ''
+    nav.maps.forEach(map => {
+        mapList += /* html */ `<li>
+      <a href="${map.url}">${map.name}</a>
+    </li>`
+    })
+
+    mapEl.innerHTML = /* html */ `
+    <h3>
+      <span class="text">${nav.title}</span>
+      <span class="icon">+</span>
+    </h3>
+    <ul>
+      ${mapList}
+    </ul>
+  `
+
+    navigationsEl.append(mapEl)
+})
+
+
+// 올해 연도를 적용!
+const thisYearEl = document.querySelector('.this-year')
+thisYearEl.textContent = new Date().getFullYear()
+
+
+// 푸터 내비게이션 맵 아코디언
+const mapEls = [...document.querySelectorAll('footer .navigations .map')]
+mapEls.forEach(el => {
+    const h3El = el.querySelector('h3')
+    h3El.addEventListener('click', () => {
+        el.classList.toggle('active')
+    })
+})
