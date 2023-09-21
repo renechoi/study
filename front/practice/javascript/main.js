@@ -479,5 +479,102 @@ function functionPractice() {
 functionPractice();
 
 
+function classPractice() {
+    const fruits = new Array('apple', 'banana', 'cherry');
+
+
+    Array.prototype.heropy = function(){
+        console.log(this)
+    }
+
+    fruits.heropy()
+
+    const arr = []
+    arr.heropy()
+
+
+    function User(first, last){
+        this.firstName = first
+        this.lastName = last
+    }
+
+    const heropy = new User('h', 'park')
+    const neo = new User('neo', 'lee')
+
+    User.prototype.getFullname = function  (){
+        return `${this.firstName} ${this.lastName}`
+    }
+
+
+    console.log(heropy);
+    console.log(neo);
+    console.log(heropy.getFullname());
+
+    class User2 {
+        constructor(first, last) {
+            this.firstName = first
+            this.lastName = last
+        }
+
+        getFullName(){
+            return `${this.firstName} ${this.lastName}`
+        }
+
+
+        get fullName(){
+            return `${this.firstName} ${this.lastName}`
+        }
+
+        static isUser(user){
+            if (user.firstName && user.lastName){
+                return true;
+            }
+            return false;
+        }
+    }
+
+
+    class Vehicle{
+        constructor(price, accelration) {
+        }
+    }
+
+    class Bicycle extends Vehicle{
+        constructor(price=100, accelration) {
+            super(price);
+        }
+    }
+
+    class A {
+        constructor() {
+        }
+    }
+
+    class B extends A{
+        constructor() {
+            super();
+        }
+    }
+
+    class C extends B{
+        constructor() {
+            super();
+        }
+    }
+
+    const a = new A()
+    const b = new B()
+    const c = new C()
+
+    console.log(c instanceof A) // true
+    console.log(c instanceof B) // true
+    console.log(c instanceof C) // true
+
+
+
+}
+
+classPractice();
+
 
 
