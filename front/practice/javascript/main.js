@@ -189,3 +189,36 @@ function optionalChaining() {
 
 optionalChaining();
 
+
+function forIteration() {
+    const users = [
+        {
+            name: 'he',
+            age: 30
+        }
+    ]
+
+    for (user of users) {
+        console.log(user.name)
+    }
+
+
+    for (const key in user) {
+        console.log(key)
+        console.log(user[key])
+    }
+}
+
+forIteration();
+
+
+function whileIteration() {
+    let n = 0;
+    while (n < 4) {
+        console.log(n);
+        n++;
+    }
+}
+
+whileIteration();
+
