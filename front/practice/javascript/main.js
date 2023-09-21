@@ -222,3 +222,262 @@ function whileIteration() {
 
 whileIteration();
 
+function functionPractice() {
+// 함수 선언문 -> 호이스팅 -> 유효한 범위 내에서 제일 꼭대기에 올라가서 존재한다.
+    function hello() {
+        console.log('hello')
+    }
+
+
+    hello2(); // 함수 표현식 -> 호이스팅이 안 되므로 에러가 난다
+    const hello2 = function () {
+        console.log("hello2")
+    }
+
+
+    console.log(hello2)
+
+    function sum(a,b){
+        return a + b;
+    }
+
+    function sum2(a, b=1){
+        return a + b;
+    }
+
+    console.log(sum2(7))
+
+
+
+    const user = {
+        name: 'abc',
+        age: 10
+    }
+
+
+    function getName(user){
+        const {name} = user
+        return name;
+    }
+
+    // 바로 구조분해해서 함수 내부로 할당한다
+    function getName2({name}){
+        return name;
+    }
+
+    function getEmail({email = '이메일이 없습니다.'}){
+        return email
+    }
+
+
+    const fruits = ['apple', 'banana', 'cherry']
+    function getSecondItem(array){
+        return array[1];
+    }
+
+    function getSecondItem2([a, b, c]){
+        return b
+    }
+
+    function getSecondItem3([, b]){
+        return b
+    }
+
+
+
+
+
+    function sum(...rest){
+        console.log(arguments)
+        return rest.reduce(function (acc, cur){
+            return acc + cur
+        }, 0)
+    }
+
+    console.log(sum(1,2));
+    console.log(sum(1,2,3,4));
+    console.log(sum(1,2,3,4,5));
+
+
+
+    function summation(a,b){
+        return a + b
+    }
+
+    const summation2 = (a, b ) => a+ b
+
+
+    const arrow = () => {}
+    const arrow2 = x => {}
+    const arrow3 = (x,y) => {}
+    const arrow4 = x => {return x * x}
+    const arrow5 = x => {return {a:1}};
+
+
+
+    (() => {console.log(a*2)})();
+
+    ( ()=>{}  ) ();
+    ( function (){}  ) ();
+    ((function (){} ));
+    !function (){} ();
+    +function (){}();
+
+
+    // 콜백 -> 함수가 실행될 때 다른 함수를 매개 변수로 넣어준다.
+
+    const a = callback => {
+        console.log('a')
+        callback()
+    }
+
+    const b = () => {
+        console.log('b')
+    }
+
+    a(b);
+
+
+
+    const sum1 = (a, b) => a + b;
+
+    console.log(sum1(1,2));
+
+    const sum3 = (a, b, c)=> {
+        setTimeout( ()=>{
+            c(a + b)
+        }, 1000 )
+    }
+
+
+    sum3(2,3, (value)=> {console.log(value)})
+    console.log();
+
+    // 콜백 예제
+
+    // https://www.gstatic.com/webp/gallery/4.jpg
+
+    const loadImage = (url, cb => {
+        const imgEl = document.createElement('img');
+        imgEl.src = url;
+        imgEl.addEventListener('load', ()=> {
+            setTimeout( () => {
+                cb(imgEl);
+            },1000)
+        })
+
+
+    })
+
+    const containerEl = document.querySelector('.container')
+    loadImage('https://www.gstatic.com/webp/gallery/4.jpg', (imgEl)=>{
+        containerEl.innerHTML=''
+        containerEl.append(imgEl);
+    });
+
+
+
+    // 재귀
+
+    let i = 0;
+    const recur = () => {
+        i +=1
+        if (i<4){
+            recur();
+        }
+    }
+
+
+    const userA = {name:'a', parent : null};
+    const userB = {name:'a', parent : userA};
+    const userC = {name:'a', parent : userB};
+    const userD = {name:'a', parent : userC};
+
+
+    const getRootUser = user =>{
+        if (user.parent){
+            return getRootUser(user.parent)
+        }
+        return user
+    }
+
+
+
+
+    setTimeout( ()=>{
+        console.log('hello')
+    }, 2000)
+
+
+    const scheduling = () =>{
+        console.log('hello')
+    }
+
+    const timeout = setTimeout(scheduling, 2000);
+
+    clearTimeout(timeout)
+
+
+    setInterval(scheduling, 2000)
+
+
+
+    // this
+    // 일반 함수의 this는 호출 위치에서 정의
+    // 화살표 함수의 this는 자신이 선언된 함수(렉시컬) 범위에서 정의
+
+    function thisuser1(){
+        this.firstName = 'abc'
+        this.lastName = 'ef'
+        return {
+            firstName:'ab',
+            lastName:'park',
+            age:10,
+            getFullName: function ()  {
+                return `${this.firstName} ${this.lastName}`
+            }
+        }
+    }
+
+    function thisuser2(){
+        this.firstName = 'abc'
+        this.lastName = 'ef'
+        return {
+            firstName:'ab',
+            lastName:'park',
+            age:10,
+            getFullName: () => {
+                return `${this.firstName} ${this.lastName}`
+            }
+        }
+    }
+
+    console.log(thisuser1().getFullName())
+
+
+    const lewis = {
+        firstName: 'lew',
+        lastName: 'lee'
+    }
+
+    const u = thisuser1()
+    console.log(u.getFullName().call(lewis))
+
+
+
+    const timer = {
+        title: 'timer',
+        timeout(){
+            console.log(this.title)
+            setTimeout( ()=> {
+                console.log(this.title)
+            }, 1000)
+        }
+    }
+}
+
+functionPractice();
+
+
+
+
