@@ -576,5 +576,133 @@ function classPractice() {
 
 classPractice();
 
+function stringPractice() {
+    const str = '1234567';
+    console.log(str.padEnd(10, '0'));
+    console.log(str)
+
+    str.slice(0,5);
+
+    const str2 = 'apple, banana, cherry';
+    str.split(', ');
+}
+
+stringPractice();
+
+function numberAndMathPractice() {
+    const num = 3.1415926535
+    parseFloat(num.toFixed(2));
+
+    const num2 = 1000000
+    console.log(`${num.toLocaleString()}원`)
+
+
+    Math.abs(-2);
+
+
+    Math.max(1, 22, 38, 192);
+
+
+    function random(min =0, max = 10){
+        return Math.floor(Math.random() * (max-min)) + min
+    }
+
+    let randomN = random(101, 999);
+
+
+
+}
+
+numberAndMathPractice();
+
+
+function datePractice() {
+    let date = new Date();
+
+
+    new Date(2022,11,16,12,57,30);
+
+
+    let day = date.getDay();
+
+    Date.prototype.isAfter = function (date){
+        const a = this.getTime();
+        const b = this.getTime();
+        return a > b
+    }
+}
+
+datePractice();
+
+
+function arrayPractice() {
+    const arr = ['a', 'b', 'c']
+    const arr2 = ['d', 'e', 'f']
+
+    arr[0];
+    arr.at(0)
+
+    arr.length-1
+
+    let concat = arr.concat(arr2);
+
+
+
+    const isValid = arr.every(item => item < 5);
+
+
+    let filter = arr.filter(number => number < 30);
+
+
+    const numbers = [ 5, 6,10, 130, 5, 4];
+    numbers.find(item => item > 10);
+
+
+
+    const arr3 = [1,2, [3,4, [5,6, [7,8]]]]
+    arr.flat(3);
+    arr.flat(Infinity)
+
+
+    const users = [
+        {name:'neo', age:85},
+        {name:'amy', age:25}
+    ]
+
+    console.log(users.includes({name:'neo', age:85}))
+
+    const newUsers = users.map(user => {
+        return {
+            ...user,
+            isValid:true,
+            email:null
+        }
+    })
+
+
+    const num4= [1,2,3]
+    const sum = num4.reduce((accumulator, currentValue)=>{
+        return accumulator + currentValue;
+    },0)
+
+
+
+    arr.shift();
+
+
+    arr.slice(0,3);
+
+
+    arr.some(item => item > 3);
+
+
+    const arr5 = ['a', 'b', 'c']
+    arr.splice(2, 0, 'x')
+
+
+}
+
+arrayPractice();
+
 
 
