@@ -705,4 +705,31 @@ function arrayPractice() {
 arrayPractice();
 
 
+function nodeVsElement() {
+    const parent = document.querySelector('.parent')
+    console.log(parent.childNodes);
+    console.log(parent.children);
+}
 
+nodeVsElement();
+
+
+function search() {
+    let elementById = document.getElementById('child2');
+    const nodeList = document.querySelectorAll('.child');
+    console.log(nodeList)
+    nodeList.forEach(el => console.log(el.textContent));
+
+    const el = document.querySelector('.child');
+    console.log(el.closest('div'))
+    console.log(el.closest('body'))
+
+    console.log(el.previousSibling)
+
+    console.log(Array.from(el.children));
+}
+
+
+
+
+search();
