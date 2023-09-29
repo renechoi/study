@@ -12,24 +12,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet"/>
 
 <!--    <link rel="stylesheet" href="./css/main.css"/>-->
-    <script type="module" defer src="./main.js"></script>
+    <script type="module" defer src="./width.js"></script>
+    <style>
+        body{
+            height: 1000px;
+            padding: 500px 0;
+        }
+        .parent{
+            width: 300px;
+            height: 200px;
+            margin-top: 1000px;
+            padding: 20px;
+            overflow: auto;
+            border: 10px solid;
+        }
+        .child{
+            height: 100px;
+            margin-top: 100px;
+            border:10px solid red;
+        }
+    </style>
     <title>Title</title>
 </head>
 <body>
-<h1>Hello world!</h1>
-
-
-<div class="container">
-    <h1>
-        loading...
-    </h1>
-</div>
 
 
 <div class="parent">
     <div class="child">1</div>
-    텍스트 1
-    <div id="child2" class="child">2</div>
+    <div class="child">2</div>
 </div>
 
 

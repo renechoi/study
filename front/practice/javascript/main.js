@@ -727,6 +727,42 @@ function search() {
     console.log(el.previousSibling)
 
     console.log(Array.from(el.children));
+
+
+    el.textContent = 'hello~';
+    nodeList.prepend(new Comment('주석'))
+    nodeList.append(el);
+
+
+    let element = document.querySelector('.parent');
+    elementById.insertBefore(el, element);
+
+    const child = document.querySelector('.child');
+    console.log(child.textContent)
+
+
+    const parent = document.querySelector('.parent');
+    console.log(parent.innerHTML);
+
+    parent.innerHTML= `<div> </div>`;
+
+
+
+    el.classList.add('active');
+
+
+    el.addEventListener('click', ()=> {
+        el.classList.toggle('active')
+
+    })
+
+
+    const styles = window.getComputedStyle(el);
+    console.log(styles);
+
+
+    el.setAttribute('title', 'hello world')
+
 }
 
 
