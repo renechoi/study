@@ -1,17 +1,18 @@
-//////// Component ////////
-
+///// Component /////
 export class Component {
     constructor(payload = {}) {
         const {
-            tagName = 'div',
+            tagName = 'div', // 최상위 요소의 태그 이름
+            props = {},
             state = {}
-        } = payload;
-        this.el = document.createElement(tagName);
-        this.state = state;
-        this.render();
+        } = payload
+        this.el = document.createElement(tagName) // 컴포넌트의 최상위 요소
+        this.props = props // 컴포넌트가 사용될 때 부모 컴포넌트에서 받는 데이터
+        this.state = state // 컴포넌트 안에서 사용할 데이터
+        this.render()
     }
-    render () {
-
+    render() { // 컴포넌트를 렌더링하는 함수
+        // ...
     }
 }
 
@@ -45,15 +46,14 @@ function routeRender(routes) {
     window.scrollTo(0, 0)
 }
 export function createRouter(routes) {
-    return function (){
-        window.addEventListener('popstate', ()=>{
-            routeRender(routes);
+    // 원하는(필요한) 곳에서 호출할 수 있도록 함수 데이터를 반환!
+    return function () {
+        window.addEventListener('popstate', () => {
+            routeRender(routes)
         })
-        routeRender(routes);
+        routeRender(routes)
     }
 }
-
-
 
 
 ///// Store /////

@@ -602,7 +602,7 @@ class App extends (0, _heropy.Component) {
 exports.default = App;
 
 },{"./core/heropy":"57bZf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./components/TheHeader":"3Cyq4","./components/TheFooter":"b3x3c"}],"57bZf":[function(require,module,exports) {
-//////// Component ////////
+///// Component /////
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Component", ()=>Component);
@@ -611,12 +611,18 @@ parcelHelpers.export(exports, "createRouter", ()=>createRouter);
 parcelHelpers.export(exports, "Store", ()=>Store);
 class Component {
     constructor(payload = {}){
-        const { tagName = "div", state = {} } = payload;
-        this.el = document.createElement(tagName);
-        this.state = state;
+        const { tagName = "div", props = {}, state = {} } = payload;
+        this.el = document.createElement(tagName) // 컴포넌트의 최상위 요소
+        ;
+        this.props = props // 컴포넌트가 사용될 때 부모 컴포넌트에서 받는 데이터
+        ;
+        this.state = state // 컴포넌트 안에서 사용할 데이터
+        ;
         this.render();
     }
-    render() {}
+    render() {
+    // ...
+    }
 }
 ///// Router /////
 // 페이지 렌더링!
@@ -643,6 +649,7 @@ function routeRender(routes) {
     window.scrollTo(0, 0);
 }
 function createRouter(routes) {
+    // 원하는(필요한) 곳에서 호출할 수 있도록 함수 데이터를 반환!
     return function() {
         window.addEventListener("popstate", ()=>{
             routeRender(routes);
@@ -778,9 +785,45 @@ exports.default = TheHeader;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _heropy = require("../core/heropy");
+var _about = require("../store/about");
+var _aboutDefault = parcelHelpers.interopDefault(_about);
 class TheFooter extends (0, _heropy.Component) {
+    constructor(){
+        super({
+            tagName: "footer"
+        });
+    }
+    render() {
+        const { github, repository } = (0, _aboutDefault.default).state;
+        this.el.innerHTML = /* html */ `
+      <div>
+        <a href="${repository}">
+          GitHub Repository.
+        </a>
+      </div>
+      <div>
+        <a href="${github}">
+          ${new Date().getFullYear()}
+          HEROPY
+        </a>
+      </div>
+    `;
+    }
 }
 exports.default = TheFooter;
+
+},{"../core/heropy":"57bZf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../store/about":"4RAJO"}],"4RAJO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _heropy = require("../core/heropy");
+exports.default = new (0, _heropy.Store)({
+    photo: "https://heropy.blog/css/images/logo.png",
+    name: "HEROPY / ParkYoungWoong",
+    email: "thesecon@gmail.com",
+    blog: "https://heropy.blog",
+    github: "https://github.com/ParkYoungWoong",
+    repository: "https://github.com/ParkYoungWoong/vanillajs-movie-app"
+});
 
 },{"../core/heropy":"57bZf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3L9mC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -788,23 +831,32 @@ parcelHelpers.defineInteropFlag(exports);
 var _heropy = require("../core/heropy");
 var _home = require("./Home");
 var _homeDefault = parcelHelpers.interopDefault(_home);
-// import Movie from './Movie'
+var _movie = require("./Movie");
+var _movieDefault = parcelHelpers.interopDefault(_movie);
 var _about = require("./About");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
-// import NotFound from './NotFound'
+var _notFound = require("./NotFound");
+var _notFoundDefault = parcelHelpers.interopDefault(_notFound);
 exports.default = (0, _heropy.createRouter)([
     {
         path: "#/",
         component: (0, _homeDefault.default)
     },
-    // { path: '#/movie', component: Movie },
+    {
+        path: "#/movie",
+        component: (0, _movieDefault.default)
+    },
     {
         path: "#/about",
         component: (0, _aboutDefault.default)
-    }
+    },
+    {
+        path: ".*",
+        component: (0, _notFoundDefault.default)
+    } // '.*' === '.{0,}'
 ]);
 
-},{"../core/heropy":"57bZf","./Home":"0JSNG","./About":"gdB30","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"0JSNG":[function(require,module,exports) {
+},{"../core/heropy":"57bZf","./Home":"0JSNG","./About":"gdB30","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./Movie":"1LTyN","./NotFound":"4fDiL"}],"0JSNG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _heropy = require("../core/heropy");
@@ -1062,6 +1114,93 @@ class About extends (0, _heropy.Component) {
     }
 }
 exports.default = About;
+
+},{"../core/heropy":"57bZf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1LTyN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _heropy = require("../core/heropy");
+var _movie = require("../store/movie");
+var _movieDefault = parcelHelpers.interopDefault(_movie);
+class Movie extends (0, _heropy.Component) {
+    async render() {
+        this.el.classList.add("container", "the-movie");
+        // 스켈레톤 UI 출력!
+        this.el.innerHTML = /* html */ `
+      <div class="poster skeleton"></div>
+      <div class="specs">
+        <div class="title skeleton"></div>
+        <div class="labels skeleton"></div>
+        <div class="plot skeleton"></div>
+      </div>
+    `;
+        // 영화 상세 정보 가져오기!
+        await (0, _movie.getMovieDetails)(history.state.id);
+        const { movie } = (0, _movieDefault.default).state;
+        const bigPoster = movie.Poster.replace("SX300", "SX700");
+        // this.el.classList.add('container', 'the-movie')
+        this.el.innerHTML = /* html */ `
+      <div
+        style="background-image: url(${bigPoster});"
+        class="poster">
+      </div>
+      <div class="specs">
+        <div class="title">
+          ${movie.Title}
+        </div>
+        <div class="labels">
+          <span>${movie.Released}</span>
+          &nbsp;/&nbsp;
+          <span>${movie.Runtime}</span>
+          &nbsp;/&nbsp;
+          <span>${movie.Country}</span>
+        </div>
+        <div class="plot">
+          ${movie.Plot}
+        </div>
+        <div>
+          <h3>Ratings</h3>
+          ${movie.Ratings.map((rating)=>{
+            return `<p>${rating.Source} - ${rating.Value}</p>`;
+        }).join("")}
+        </div>
+        <div>
+          <h3>Actors</h3>
+          <p>${movie.Actors}</p>
+        </div>
+        <div>
+          <h3>Director</h3>
+          <p>${movie.Director}</p>
+        </div>
+        <div>
+          <h3>Production</h3>
+          <p>${movie.Production}</p>
+        </div>
+        <div>
+          <h3>Genre</h3>
+          <p>${movie.Genre}</p>
+        </div>
+      </div>
+    `;
+    }
+}
+exports.default = Movie;
+
+},{"../core/heropy":"57bZf","../store/movie":"kq1bo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4fDiL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _heropy = require("../core/heropy");
+class NotFound extends (0, _heropy.Component) {
+    render() {
+        this.el.classList.add("container", "not-found");
+        this.el.innerHTML = /* html */ `
+      <h1>
+        Sorry..<br />
+        Page Not Found.
+      </h1>
+    `;
+    }
+}
+exports.default = NotFound;
 
 },{"../core/heropy":"57bZf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["f3BSW","gLLPy"], "gLLPy", "parcelRequireb9ac")
 
