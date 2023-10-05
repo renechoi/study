@@ -19,8 +19,8 @@ export const searchMovies = async page => {
         store.state.message = ''
     }
     try {
-        const res = await fetch(`https://omdbapi.com?apikey=7035c60c&s=${store.state.searchText}&page=${page}`, {
-        // const res = await fetch('/api/movie', {
+        // const res = await fetch(`https://omdbapi.com?apikey=7035c60c&s=${store.state.searchText}&page=${page}`, {
+        const res = await fetch('/api-serverless/movie', {
             method: 'POST',
             body: JSON.stringify({
                 title: store.state.searchText,
