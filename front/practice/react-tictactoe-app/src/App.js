@@ -60,7 +60,7 @@ function App() {
             'go to move start';
         return (
             <li key={move}>
-                <button onClick={()=>jumpTo(move)}>
+                <button className='move-button' onClick={()=>jumpTo(move)}>
                     {desc}
                 </button>
             </li>
@@ -80,7 +80,7 @@ function App() {
                 onclick={(i)=>handleClick(i)}/>
             </div>
             <div className="game-info">{status}</div>
-            <ol>{moves}</ol>
+            <ol style={{listStyle:'none'}}>{moves}</ol>
         </div>
     )
 }
