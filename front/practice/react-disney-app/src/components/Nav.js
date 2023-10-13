@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth'
 
 const Nav = () => {
 
@@ -11,7 +12,22 @@ const Nav = () => {
     const { pathname } = useLocation();
     const [searchValue, setSearchValue] = useState("");
     const navigate = useNavigate();
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
     const [userData, setUserData] = useState(initialUserData);
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                if (pathname === "/") {
+                    navigate("/main");
+                }
+            } else {
+                navigate("/");
+            }
+        })
+    }, [auth, navigate, pathname])
+
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
@@ -35,7 +51,27 @@ const Nav = () => {
         navigate(`/search?q=${e.target.value}`);
     }
 
+    const handleAuth = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                setUserData(result.user);
+                localStorage.setItem("userData", JSON.stringify(result.user));
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(() => {
+                setUserData({});
+                navigate(`/`);
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
 
     return (
         <NavWrapper show={show}>
@@ -47,7 +83,25 @@ const Nav = () => {
                 />
             </Logo>
 
+            {pathname === "/" ?
+                (<Login onClick={handleAuth}>Login</Login>) :
+                <>
+                    <Input
+                        value={searchValue}
+                        onChange={handleChange}
+                        className='nav__input'
+                        type="text"
+                        placeholder='검색해주세요.'
+                    />
 
+                    <SignOut>
+                        <UserImg src={userData.photoURL} alt={userData.displayName} />
+                        <DropDown>
+                            <span onClick={handleSignOut}>Sign Out</span>
+                        </DropDown>
+                    </SignOut>
+                </>
+            }
         </NavWrapper>
     )
 }
@@ -109,14 +163,14 @@ const Login = styled.a`
 `;
 
 const Input = styled.input`
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, 0);
-    background-color: rgba(0,0,0, 0.582);
-    border-radius: 5px;
-    color: white; 
-    padding: 5px;
-    border: none;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgba(0,0,0, 0.582);
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  border: none;
 `;
 
 const NavWrapper = styled.nav`
