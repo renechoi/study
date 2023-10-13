@@ -1,0 +1,9 @@
+1. npm init vite
+
+2. npm install axios dayjs react-icons react-router-dom react-tooltip react-youtube sass
+
+3. npm install -D eslint
+
+4. npx eslint --init
+
+
