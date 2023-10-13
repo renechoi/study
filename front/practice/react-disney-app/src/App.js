@@ -1,42 +1,29 @@
-import logo from './logo.svg';
+import {Outlet, Route, Routes} from 'react-router-dom';
 import './App.css';
-import Nav from "./components/Nav";
-import styled from "styled-components";
-import Banner from "./components/Banner";
-import Category from "./components/Category";
-import Row from "./components/Row";
-import requests from "./api/request";
+import Nav from './components/Nav';
+import MainPage from './pages/MainPage';
+
+const Layout =() => {
+    return(
+        <div>
+            <Nav />
+
+            <Outlet />
+        </div>
+    )
+}
+
 
 function App() {
     return (
-        <Container>
-            <Nav/>
-            <Banner/>
-            <Category/>
-            <Row title="Trending Now" id="TN" fetchUrl={requests.fetchTrending} />
-            <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTrending} />
-        </Container>
+        <div className='app'>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route path="main" element={<MainPage />} />
+                </Route>
+            </Routes>
+        </div>
     );
 }
 
 export default App;
-
-const Container = styled.main `
-    position:relative;
-  min-height: calc(100vh - 250px);
-  overflow-x: hidden;
-  display: block;
-  top: 72px;
-  padding: 0 calc(.3vw + 5px);
-  
-  &:after{
-    background: url("/images/home-background.png") center center / cover no-repeat fixed;
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 1;
-    z-index: -1;
-    
-  }
-  
-`
