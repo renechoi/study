@@ -1,10 +1,9 @@
 import React from 'react';
-import {Outlet, Route, Routes} from "react-router-dom";
+import { Route, Routes, Outlet } from 'react-router-dom';
+import VideoPage from './pages/VideoPage/VideoPage';
 import NavigationBar from "./components/NavigationBar/navigationBar.jsx";
 import SideBar from "./components/SideBar/sideBar.jsx";
-import MainPage from './pages/MainPage/mainPage.jsx';
-import VideoPage from "./pages/VideoPage/videoPage.jsx";
-import SearchedVideosPage from "./pages/SearchedVideoPage/searchedVideosPage.jsx";
+import MainPage from "./pages/MainPage/mainPage.jsx";
 
 const Layout = () => {
     return (
@@ -31,4 +30,5 @@ const App = () => {
         </React.Fragment >
     );
 }
-export default App
+
+export default App;
