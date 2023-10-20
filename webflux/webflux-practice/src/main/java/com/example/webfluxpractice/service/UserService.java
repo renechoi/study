@@ -1,42 +1,62 @@
 package com.example.webfluxpractice.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.stereotype.Service;
-
-import com.example.webfluxpractice.repository.User;
-import com.example.webfluxpractice.repository.UserRepository;
-
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.time.Duration;
+
+import com.example.webfluxpractice.repository.User;
+import com.example.webfluxpractice.repository.UserR2dbcRepository;
 
 @Service
 @RequiredArgsConstructor
 public class UserService {
-    private final UserRepository userRepository;
+//    private final UserRepository userRepository;
+    private final UserR2dbcRepository userR2dbcRepository;
+    private final ReactiveRedisTemplate<String, User> reactiveRedisTemplate;
 
     public Mono<User> create(String name, String email) {
-        return userRepository.save(User.builder().name(name).email(email).build());
+        return userR2dbcRepository.save(User.builder().name(name).email(email).build());
     }
 
     public Flux<User> findAll() {
-        return userRepository.findAll();
+        return userR2dbcRepository.findAll();
+    }
+
+    private String getUserCacheKey(Long id) {
+        return "users:%d".formatted(id);
     }
 
     public Mono<User> findById(Long id) {
-        return userRepository.findById(id);
+        return reactiveRedisTemplate.opsForValue()
+                .get(getUserCacheKey(id))
+                .switchIfEmpty(userR2dbcRepository.findById(id)
+                        .flatMap(u -> reactiveRedisTemplate.opsForValue()
+                                .set(getUserCacheKey(id), u, Duration.ofSeconds(30))
+                                .then(Mono.just(u)))
+                );
     }
 
-    public Mono<Integer> deleteById(Long id) {
-        return userRepository.deleteById(id);
+    public Mono<Void> deleteById(Long id) {
+        return userR2dbcRepository.deleteById(id)
+                .then(reactiveRedisTemplate.unlink(getUserCacheKey(id)))
+                .then(Mono.empty());
     }
 
-    // flatmap으로 새로운 스트림을 생성
+    public Mono<Void> deleteByName(String name) {
+        return userR2dbcRepository.deleteByName(name);
+    }
+
     public Mono<User> update(Long id, String name, String email) {
-        return userRepository.findById(id)
+        return userR2dbcRepository.findById(id)
                 .flatMap(u -> {
                     u.setName(name);
                     u.setEmail(email);
-                    return userRepository.save(u);
-                });
+                    return userR2dbcRepository.save(u);
+                })
+                .flatMap(u -> reactiveRedisTemplate.unlink(getUserCacheKey(id)).then(Mono.just(u)));
     }
 }
