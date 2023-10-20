@@ -5,8 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.webfluxpractice.dto.UserCreateRequest;
+import com.example.webfluxpractice.dto.UserPostResponse;
 import com.example.webfluxpractice.dto.UserResponse;
 import com.example.webfluxpractice.dto.UserUpdateRequest;
+import com.example.webfluxpractice.service.PostServiceV2;
 import com.example.webfluxpractice.service.UserService;
 
 import reactor.core.publisher.Flux;
@@ -17,6 +19,7 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/users")
 public class UserController {
     private final UserService userService;
+    private final PostServiceV2 postServiceV2;
 
     @PostMapping("")
     public Mono<UserResponse> createUser(@RequestBody UserCreateRequest request) {
@@ -42,6 +45,12 @@ public class UserController {
         return userService.deleteById(id).then(Mono.just(ResponseEntity.noContent().build()));
     }
 
+    @DeleteMapping("/search")
+    public Mono<ResponseEntity<?>> deleteUserByName(@RequestParam String name) {
+        return userService.deleteByName(name).then(Mono.just(ResponseEntity.noContent().build()));
+    }
+
+
     @PutMapping("/{id}")
     public Mono<ResponseEntity<UserResponse>> updateUser(@PathVariable Long id, @RequestBody UserUpdateRequest request) {
         // user (x): 404 not found
@@ -49,6 +58,12 @@ public class UserController {
         return userService.update(id, request.getName(), request.getEmail())
                 .map(u -> ResponseEntity.ok(UserResponse.of(u)))
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
+    }
+
+    @GetMapping("/{id}/posts")
+    public Flux<UserPostResponse> getUserPosts(@PathVariable Long id) {
+        return postServiceV2.findAllByUserId(id)
+                .map(UserPostResponse::of);
     }
 }
 
