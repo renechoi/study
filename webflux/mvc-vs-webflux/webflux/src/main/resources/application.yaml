@@ -1,0 +1,16 @@
+server:
+  port: 9010
+
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost:3307/mvc_webflux_jmeter_test
+    username: root
+    password: mysql1234
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+  jpa:
+    generate-ddl: on
+    hibernate:
+      ddl-auto: create
