@@ -1,7 +1,6 @@
 package ex02
 
 import java.io.Serializable
-import java.util.*
 
 /**
  * @author        : Rene
@@ -20,7 +19,7 @@ fun main(){
 
     // 자바랑 100% 호환되므로 optional이 가능
 
-    Optional.ofNullable(d).ifPresent() ...
+//    Optional.ofNullable(d).ifPresent() ...
 
 
 
@@ -48,8 +47,8 @@ fun callFunction(i: Int?){  // i라는 값이 null일 수도 있다
 
 
     // 자바에서 비슷하게 한다면
-    var temp1 = (i == null) ? "null 입니다" : i;
-    System.out.println("temp = " + temp1);
+//    var temp1 = (i == null) ? "null 입니다" : i;
+//    System.out.println("temp = " + temp1);
 
     // ->
 
