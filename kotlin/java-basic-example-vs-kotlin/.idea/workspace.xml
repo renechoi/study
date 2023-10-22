@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="db9cff9d-391e-4822-8548-b99b67601953" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/api/service.api.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/db/service.db.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/flow.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/mvc.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/plain-batch-practice.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/webflux.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/actions/getCurrentUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/actions/getProductById.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/actions/getProducts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/providers/SwrProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/components/ToastProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/helpers/dayjs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/helpers/previewImage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/helpers/prismadb.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/helpers/uploadImage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/pages/api/auth/[...nextauth].ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/days2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/LikeButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/Sample.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/Video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/VideoList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/thumbnail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/dependencies-accessors/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/7.4.2/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/classes/kotlin/main/META-INF/kotlin-basic-example.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/classes/kotlin/main/MainKt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.keystream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab_i" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab_i.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/counters.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/compileKotlin/local-state/build-history.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/kotlin/kotlinbasicexample10SNAPSHOTjar-classes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/libs/kotlin-basic-example-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../kotlin-basic-example/src/main/kotlin/Main.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../rsi_1m.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/src/main/java/org/api/binance/FindLowHighPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/src/main/java/org/api/binance/FindLowHighPoints.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ProjectId" id="2X6BbTds7x9O4achMfDZGNCnGIm" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db9cff9d-391e-4822-8548-b99b67601953" name="Changes" comment="" />
+      <created>1697939720800</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697939720800</updated>
+      <workItem from="1697939723482" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

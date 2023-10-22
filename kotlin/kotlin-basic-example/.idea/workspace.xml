@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eb4f3368-715c-4403-879f-54806456ae2a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/api/service.api.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/db/service.db.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/flow.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/mvc.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/plain-batch-practice.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules/webflux.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/actions/getCurrentUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/actions/getProductById.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/actions/getProducts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/providers/SwrProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/components/ToastProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/helpers/dayjs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/helpers/previewImage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/helpers/prismadb.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/helpers/uploadImage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/pages/api/auth/[...nextauth].ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/days2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/LikeButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/Sample.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/Video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/VideoList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/components/thumbnail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../front/practice/orang-practice/react-practice/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../rsi_1m.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/practice/next-secondhand-app/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/src/main/java/org/api/binance/FindLowHighPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/src/main/java/org/api/binance/FindLowHighPoints.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ProjectId" id="2X6BFw8O6e30AmcYn16dXUTkids" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="kotlin-basic-example.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eb4f3368-715c-4403-879f-54806456ae2a" name="Changes" comment="" />
+      <created>1697939549836</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697939549836</updated>
+      <workItem from="1697939552039" duration="97000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
