@@ -32,3 +32,9 @@
     ```sh
     ./mvnw spring-boot:run
     ```
+6. 정상 작동 후 확인
+
+도커가 정상적으로 실행되면 `localhost:3301` 포트와 `3302` 포트로 `Database` 조회시 다음과 같이 확인되어야 합니다. 
+
+![docker-after-database.png](document%2Fdocker-after-database.png)
+
